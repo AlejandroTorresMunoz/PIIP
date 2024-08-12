@@ -8,3 +8,10 @@ La carpeta **VirtualEnv** se corresponde con el entorno virtual de Python donde 
     -   streamsync edit PIIP_app : Para poder ejecutar el proyecto y editarlo en el navegador.
     -   streamsync run PIIP_app : Para poder ejecutar el proyecto y verlo en el navegador.
 
+**Instrucciones para usar el entorno virtual**
+
+Para usar el entorno virtual, se han de seguir los siguientes pasos : 
+-   1. Abrir code, y dentro de code abrir la carpeta del proyecto.
+-   2. Navegar hasta la carpeta 'Scripts': cd .\VirtualEnv\Scripts\
+-   3. Activar el entorno virtual : .\activate
+-   4. Volver a la carpeta principal del proyecto : cd .. y cd ..
