@@ -7,3 +7,4 @@ La carpeta **VirtualEnv** se corresponde con el entorno virtual de Python donde 
     -   streamsync create PIIP_app : Para crear la carpeta del proyecto. **No se tiene que volver a ejecutar**.
     -   streamsync edit PIIP_app : Para poder ejecutar el proyecto y editarlo en el navegador.
     -   streamsync run PIIP_app : Para poder ejecutar el proyecto y verlo en el navegador.
+

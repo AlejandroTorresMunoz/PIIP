@@ -1,27 +1,41 @@
 import streamsync as ss
+import sqlite3 
+from PIIP_app.src.DDBB_methods import add_user, check_user
 
 # This is a placeholder to get you started or refresh your memory.
 # Delete it or adapt it as necessary.
 # Documentation is available at https://streamsync.cloud
 
 # Shows in the log when the app starts
-print("Hello world!")
 
-# Its name starts with _, so this function won't be exposed
-def _update_message(state):
-    is_even = state["counter"] % 2 == 0
-    message = ("+Even" if is_even else "-Odd")
-    state["message"] = message
+USER_LOGGED = False
 
-def decrement(state):
-    state["counter"] -= 1
-    _update_message(state)
+def login(state):
+    """Function to redirect to another URL."""
+    
+    (check_email, check_password) = check_user(email=state["email_login"], 
+               password=state["password_login"])
+    if check_email and check_password:
+        # Correct login
+        USER_LOGGED = True
+        state['login_signup_visibility'] = False
+        state['user_visibility'] = True
+    else:
+        USER_LOGGED = False
+    
 
-def increment(state):
-    state["counter"] += 1
-    # Shows in the log when the event handler is run
-    print("The counter has been incremented.")
-    _update_message(state)
+def signup(state):
+    """Function to redirect to another URL."""
+    check_signup = add_user(email=state["email_signup"],
+             password=state["password_signup"])
+    if check_signup:
+        # Correct signup
+        USER_LOGGED = True
+        state['login_signup_visibility'] = False
+        state['user_visibility'] = True
+    else:
+        USER_LOGGED = False
+
     
 # Initialise the state
 
@@ -30,11 +44,14 @@ def increment(state):
 
 initial_state = ss.init_state({
     "my_app": {
-        "title": "My App"
+        "title": "PIIP_app"
     },
     "_my_private_element": 1337,
-    "message": None,
-    "counter": 26,
+    "email_login" : "",
+    "email_signup" : "",
+    "password_login" : "",
+    "password_signup" : "",
+    "login_signup_visibility" : True,
+    "user_visibility" : False
 })
 
-_update_message(initial_state)

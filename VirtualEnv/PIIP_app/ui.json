@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "streamsync_version": "0.1.4"
+        "streamsync_version": "0.5.0"
     },
     "components": {
         "root": {
@@ -9,7 +9,7 @@
             "content": {
                 "appName": "My App"
             },
-            "parentId": null,
+            "isCodeManaged": false,
             "position": 0,
             "handlers": {},
             "visible": true
@@ -19,10 +19,12 @@
             "type": "page",
             "content": {
                 "pageMode": "compact",
-                "emptinessColor": "#e9eef1"
+                "emptinessColor": "#e9eef1",
+                "key": "HomePage"
             },
-            "parentId": "root",
+            "isCodeManaged": false,
             "position": 0,
+            "parentId": "root",
             "handlers": {},
             "visible": true
         },
@@ -30,120 +32,561 @@
             "id": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
             "type": "header",
             "content": {
-                "text": "@{my_app.title}"
+                "text": "PIIP",
+                "accentColor": "#369dec"
             },
-            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
+            "isCodeManaged": false,
             "position": 0,
+            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
+            "handlers": {}
+        },
+        "w1z354jp4aijn2s9": {
+            "id": "w1z354jp4aijn2s9",
+            "type": "page",
+            "content": {
+                "key": "NewsPage"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "root",
             "handlers": {},
             "visible": true
         },
-        "28d3885b-0fb8-4d41-97c6-978540015431": {
-            "id": "28d3885b-0fb8-4d41-97c6-978540015431",
+        "lgpvmlqatcw9a4oz": {
+            "id": "lgpvmlqatcw9a4oz",
+            "type": "page",
+            "content": {
+                "key": "LogInLogOutPage"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "root",
+            "handlers": {},
+            "visible": true
+        },
+        "7wbjilfr3w2plhpx": {
+            "id": "7wbjilfr3w2plhpx",
             "type": "section",
             "content": {
-                "title": "",
-                "snapMode": "no",
-                "containerShadow": "0px 4px 11px -12px #000000"
+                "title": "Quienes Somos"
             },
+            "isCodeManaged": false,
+            "position": 1,
             "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
-            "position": 1,
             "handlers": {},
             "visible": true
         },
-        "9556c0e3-8584-4ac9-903f-908a775a33ec": {
-            "id": "9556c0e3-8584-4ac9-903f-908a775a33ec",
-            "type": "button",
+        "oi8bezqx3uyayii2": {
+            "id": "oi8bezqx3uyayii2",
+            "type": "section",
             "content": {
-                "text": " Increment",
-                "icon": "arrow-up"
+                "title": "Objetivos"
             },
-            "parentId": "0d05bc9f-1655-4d0b-bc9b-c2f4c71a5117",
-            "position": 1,
-            "handlers": {
-                "click": "increment"
-            },
-            "visible": true
-        },
-        "51d1554e-1b88-461c-9353-1419cba0053a": {
-            "id": "51d1554e-1b88-461c-9353-1419cba0053a",
-            "type": "button",
-            "content": {
-                "text": "Decrement",
-                "icon": "arrow-down"
-            },
-            "parentId": "0d05bc9f-1655-4d0b-bc9b-c2f4c71a5117",
-            "position": 0,
-            "handlers": {
-                "click": "decrement"
-            },
-            "visible": true
-        },
-        "0d05bc9f-1655-4d0b-bc9b-c2f4c71a5117": {
-            "id": "0d05bc9f-1655-4d0b-bc9b-c2f4c71a5117",
-            "type": "horizontalstack",
-            "content": {
-                "alignment": "left"
-            },
-            "parentId": "f3777e75-3659-4d44-8ef7-aeec0d06855b",
-            "position": 0,
-            "handlers": {},
-            "visible": true
-        },
-        "172a14df-f73a-44fa-8fb1-e8648e7d32d2": {
-            "id": "172a14df-f73a-44fa-8fb1-e8648e7d32d2",
-            "type": "metric",
-            "content": {
-                "metricValue": "@{counter}",
-                "note": "@{message}",
-                "name": "Counter"
-            },
-            "parentId": "c2519671-9ce7-44e7-ba4e-b0efda9cb20e",
-            "position": 0,
-            "handlers": {},
-            "visible": true
-        },
-        "d4a5e62c-c6fe-49c4-80d4-33862af8727d": {
-            "id": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
-            "type": "columns",
-            "content": {},
-            "parentId": "28d3885b-0fb8-4d41-97c6-978540015431",
-            "position": 0,
-            "handlers": {},
-            "visible": true
-        },
-        "f3777e75-3659-4d44-8ef7-aeec0d06855b": {
-            "id": "f3777e75-3659-4d44-8ef7-aeec0d06855b",
-            "type": "column",
-            "content": {
-                "title": "",
-                "width": "1",
-                "verticalAlignment": "center",
-                "horizontalAlignment": "center"
-            },
-            "parentId": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
+            "isCodeManaged": false,
             "position": 2,
+            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
             "handlers": {},
             "visible": true
         },
-        "c2519671-9ce7-44e7-ba4e-b0efda9cb20e": {
-            "id": "c2519671-9ce7-44e7-ba4e-b0efda9cb20e",
-            "type": "column",
+        "jimgr6ss7ff2h9mz": {
+            "id": "jimgr6ss7ff2h9mz",
+            "type": "section",
             "content": {
-                "width": "1"
+                "title": "C\u00f3mo funciona"
             },
-            "parentId": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
-            "position": 0,
+            "isCodeManaged": false,
+            "position": 3,
+            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
             "handlers": {},
             "visible": true
         },
-        "d4a71819-7444-4083-a1c7-7995452a7abf": {
-            "id": "d4a71819-7444-4083-a1c7-7995452a7abf",
-            "type": "separator",
-            "content": {},
-            "parentId": "d4a5e62c-c6fe-49c4-80d4-33862af8727d",
-            "position": 1,
+        "12geg5jhi091wnx5": {
+            "id": "12geg5jhi091wnx5",
+            "type": "section",
+            "content": {
+                "title": "Testimonios"
+            },
+            "isCodeManaged": false,
+            "position": 4,
+            "parentId": "c0f99a9e-5004-4e75-a6c6-36f17490b134",
             "handlers": {},
             "visible": true
+        },
+        "0w3u56mglys4xdib": {
+            "id": "0w3u56mglys4xdib",
+            "type": "text",
+            "content": {
+                "text": "Texto descriptivo a introducir"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "7wbjilfr3w2plhpx",
+            "handlers": {},
+            "visible": true
+        },
+        "nvr68v2k28n0nghe": {
+            "id": "nvr68v2k28n0nghe",
+            "type": "text",
+            "content": {
+                "text": "Texto descriptivo a introducir"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "oi8bezqx3uyayii2",
+            "handlers": {},
+            "visible": true
+        },
+        "numjx7fabvh8nr9j": {
+            "id": "numjx7fabvh8nr9j",
+            "type": "text",
+            "content": {
+                "text": "Texto descriptivo a introducir"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "jimgr6ss7ff2h9mz",
+            "handlers": {},
+            "visible": true
+        },
+        "bfbefzy5qcahop5q": {
+            "id": "bfbefzy5qcahop5q",
+            "type": "text",
+            "content": {
+                "text": "Texto descriptivo a introducir"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "12geg5jhi091wnx5",
+            "handlers": {},
+            "visible": true
+        },
+        "opwyo8hf1ly1hf80": {
+            "id": "opwyo8hf1ly1hf80",
+            "type": "section",
+            "content": {
+                "title": "Latest News"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "w1z354jp4aijn2s9",
+            "handlers": {},
+            "visible": true
+        },
+        "lph60nmxxwrjvg7v": {
+            "id": "lph60nmxxwrjvg7v",
+            "type": "horizontalstack",
+            "content": {},
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "fxknasl5ugk21coz",
+            "handlers": {},
+            "visible": true
+        },
+        "nkhj9qa44zegdngo": {
+            "id": "nkhj9qa44zegdngo",
+            "type": "text",
+            "content": {
+                "text": "Email: "
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "lph60nmxxwrjvg7v",
+            "handlers": {},
+            "visible": true
+        },
+        "hmbkrj6d63svwrkg": {
+            "id": "hmbkrj6d63svwrkg",
+            "type": "textinput",
+            "content": {
+                "label": ""
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "lph60nmxxwrjvg7v",
+            "handlers": {},
+            "visible": true,
+            "binding": {
+                "eventType": "ss-change",
+                "stateRef": "email_login"
+            }
+        },
+        "fypvivzp8twc3335": {
+            "id": "fypvivzp8twc3335",
+            "type": "horizontalstack",
+            "content": {},
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "fxknasl5ugk21coz",
+            "handlers": {},
+            "visible": true
+        },
+        "o2m7hueq1xy2c9w7": {
+            "id": "o2m7hueq1xy2c9w7",
+            "type": "text",
+            "content": {
+                "text": "Password : "
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "fypvivzp8twc3335",
+            "handlers": {},
+            "visible": true
+        },
+        "bzf7pqb2k5mqyei0": {
+            "id": "bzf7pqb2k5mqyei0",
+            "type": "textinput",
+            "content": {
+                "label": "",
+                "passwordMode": "yes"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "fypvivzp8twc3335",
+            "handlers": {},
+            "visible": true,
+            "binding": {
+                "eventType": "ss-change",
+                "stateRef": "password_login"
+            }
+        },
+        "fxknasl5ugk21coz": {
+            "id": "fxknasl5ugk21coz",
+            "type": "section",
+            "content": {
+                "title": "Log In"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "lgpvmlqatcw9a4oz",
+            "handlers": {},
+            "visible": true
+        },
+        "tixqt9mbfgjrnizu": {
+            "id": "tixqt9mbfgjrnizu",
+            "type": "button",
+            "content": {
+                "text": "Submit"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "fxknasl5ugk21coz",
+            "handlers": {
+                "ss-click": "login"
+            },
+            "visible": true
+        },
+        "30rqi7ps799dup53": {
+            "id": "30rqi7ps799dup53",
+            "type": "section",
+            "content": {
+                "title": "Sign up"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "lgpvmlqatcw9a4oz",
+            "handlers": {},
+            "visible": true
+        },
+        "6zdv5su5qy98w2hr": {
+            "id": "6zdv5su5qy98w2hr",
+            "type": "horizontalstack",
+            "content": {},
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "30rqi7ps799dup53",
+            "handlers": {},
+            "visible": true
+        },
+        "c7yoxpfrk3mrgzw9": {
+            "id": "c7yoxpfrk3mrgzw9",
+            "type": "text",
+            "content": {
+                "text": "Email : "
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "6zdv5su5qy98w2hr",
+            "handlers": {},
+            "visible": true
+        },
+        "qjsjy1hqv0x7kqzq": {
+            "id": "qjsjy1hqv0x7kqzq",
+            "type": "textinput",
+            "content": {
+                "label": ""
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "6zdv5su5qy98w2hr",
+            "handlers": {},
+            "visible": true,
+            "binding": {
+                "eventType": "ss-change",
+                "stateRef": "email_signup"
+            }
+        },
+        "fr61bav1tcyetoxk": {
+            "id": "fr61bav1tcyetoxk",
+            "type": "horizontalstack",
+            "content": {},
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "30rqi7ps799dup53",
+            "handlers": {},
+            "visible": true
+        },
+        "93oz3uctd7wmxgo3": {
+            "id": "93oz3uctd7wmxgo3",
+            "type": "text",
+            "content": {
+                "text": "Password : "
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "fr61bav1tcyetoxk",
+            "handlers": {},
+            "visible": true
+        },
+        "6vtg273ci8m0fiaf": {
+            "id": "6vtg273ci8m0fiaf",
+            "type": "textinput",
+            "content": {
+                "label": "",
+                "passwordMode": "yes"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "fr61bav1tcyetoxk",
+            "handlers": {},
+            "visible": true,
+            "binding": {
+                "eventType": "ss-change",
+                "stateRef": "password_signup"
+            }
+        },
+        "qfojo2t4al2zhhi8": {
+            "id": "qfojo2t4al2zhhi8",
+            "type": "button",
+            "content": {
+                "text": "Submit"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "30rqi7ps799dup53",
+            "handlers": {
+                "ss-click": "signup"
+            },
+            "visible": true
+        },
+        "i7cgy4yt0l0nlkgj": {
+            "id": "i7cgy4yt0l0nlkgj",
+            "type": "button",
+            "content": {
+                "text": "Home",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
+            "handlers": {
+                "ss-click": "$goToPage_HomePage"
+            },
+            "visible": true
+        },
+        "0p206fuumj7bpfws": {
+            "id": "0p206fuumj7bpfws",
+            "type": "button",
+            "content": {
+                "text": "News",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
+            "handlers": {
+                "ss-click": "$goToPage_NewsPage"
+            },
+            "visible": true
+        },
+        "3bxeqtlzc63e8yh4": {
+            "id": "3bxeqtlzc63e8yh4",
+            "type": "button",
+            "content": {
+                "text": "Log In/ Sign Up",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
+            "handlers": {
+                "ss-click": "$goToPage_LogInLogOutPage"
+            },
+            "visible": "login_signup_visibility"
+        },
+        "48fqdvbgzi3b88bb": {
+            "id": "48fqdvbgzi3b88bb",
+            "type": "button",
+            "content": {
+                "text": "",
+                "isDisabled": "no",
+                "buttonColor": "#20cfcf",
+                "icon": "user",
+                "cssClasses": "user_visibility"
+            },
+            "isCodeManaged": false,
+            "position": 3,
+            "parentId": "bebc5fe9-63a7-46a7-b0fa-62303555cfaf",
+            "handlers": {
+                "ss-click": "$goToPage_LogInLogOutPage"
+            },
+            "visible": "user_visibility"
+        },
+        "fyulh0np795t4p9u": {
+            "id": "fyulh0np795t4p9u",
+            "type": "header",
+            "content": {
+                "text": "PIIP",
+                "accentColor": "#369dec"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "w1z354jp4aijn2s9",
+            "handlers": {}
+        },
+        "4bp7lxxtm2ahtlpv": {
+            "id": "4bp7lxxtm2ahtlpv",
+            "type": "button",
+            "content": {
+                "text": "Home",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "fyulh0np795t4p9u",
+            "handlers": {
+                "ss-click": "$goToPage_HomePage"
+            },
+            "visible": true
+        },
+        "4kh80kg65d6uwncg": {
+            "id": "4kh80kg65d6uwncg",
+            "type": "button",
+            "content": {
+                "text": "News",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "fyulh0np795t4p9u",
+            "handlers": {
+                "ss-click": "$goToPage_NewsPage"
+            },
+            "visible": true
+        },
+        "afib76uxau52l0n4": {
+            "id": "afib76uxau52l0n4",
+            "type": "button",
+            "content": {
+                "text": "Log In/ Sign Up",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "fyulh0np795t4p9u",
+            "handlers": {
+                "ss-click": "$goToPage_LogInLogOutPage"
+            },
+            "visible": "login_signup_visibility"
+        },
+        "h21ngz73lqnlfb3h": {
+            "id": "h21ngz73lqnlfb3h",
+            "type": "button",
+            "content": {
+                "text": "",
+                "buttonColor": "#20cfcf",
+                "icon": "user",
+                "cssClasses": "user_visibility"
+            },
+            "isCodeManaged": false,
+            "position": 3,
+            "parentId": "fyulh0np795t4p9u",
+            "handlers": {
+                "ss-click": "$goToPage_LogInLogOutPage"
+            },
+            "visible": true
+        },
+        "b9vuiscvil2wyx3c": {
+            "id": "b9vuiscvil2wyx3c",
+            "type": "header",
+            "content": {
+                "text": "PIIP",
+                "accentColor": "#369dec"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "lgpvmlqatcw9a4oz",
+            "handlers": {}
+        },
+        "tm4ckzeotsilu56u": {
+            "id": "tm4ckzeotsilu56u",
+            "type": "button",
+            "content": {
+                "text": "Home",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 0,
+            "parentId": "b9vuiscvil2wyx3c",
+            "handlers": {
+                "ss-click": "$goToPage_HomePage"
+            },
+            "visible": true
+        },
+        "5bbqyxxzfxhmvhy3": {
+            "id": "5bbqyxxzfxhmvhy3",
+            "type": "button",
+            "content": {
+                "text": "News",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 1,
+            "parentId": "b9vuiscvil2wyx3c",
+            "handlers": {
+                "ss-click": "$goToPage_NewsPage"
+            },
+            "visible": true
+        },
+        "q9xpfn5agrdy8crf": {
+            "id": "q9xpfn5agrdy8crf",
+            "type": "button",
+            "content": {
+                "text": "Log In/ Sign Up",
+                "buttonColor": "#20cfcf"
+            },
+            "isCodeManaged": false,
+            "position": 2,
+            "parentId": "b9vuiscvil2wyx3c",
+            "handlers": {
+                "ss-click": "$goToPage_LogInLogOutPage"
+            },
+            "visible": "login_signup_visibility"
+        },
+        "e6qqk8fpeceq4tuh": {
+            "id": "e6qqk8fpeceq4tuh",
+            "type": "button",
+            "content": {
+                "text": "",
+                "buttonColor": "#20cfcf",
+                "icon": "user"
+            },
+            "isCodeManaged": false,
+            "position": 3,
+            "parentId": "b9vuiscvil2wyx3c",
+            "handlers": {
+                "ss-click": "$goToPage_LogInLogOutPage"
+            },
+            "visible": "user_visibility"
         }
     }
 }
