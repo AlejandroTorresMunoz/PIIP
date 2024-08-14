@@ -61,3 +61,8 @@ def check_user(email: str, password: str) -> tuple[bool, bool]:
         cursor.close()
         conn.close()
 
+def save_tickers_user(state):
+    # Function to save the tickers of interest of the user
+    
+    pass
+
