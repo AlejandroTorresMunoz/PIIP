@@ -1,10 +1,10 @@
 import streamlit as st
-from src.user_files import login, signup, save_user_config, load_user_config
+from src.user_files import login, signup, save_user_config, load_user_config, save_user_preferences, load_user_preferences
 from src.market_files import load_data_market, load_companies
 
-# Data of the different marketss
-markets = {'Ibex35' : 'Ibex35Data',
-           'Nasdaq' : 'NasdaqData'}
+# Data of the different markets
+MARKETS = ['Ibex35',
+           'Nasdaq']
 
 # Configuration of the page 
 st.set_page_config(page_title="User", page_icon=":bust_in_silhouette:")
@@ -46,23 +46,28 @@ elif 'user_logged' in st.session_state and st.session_state.user_logged == True:
                                                               options=["Daily", "Weekly", "Monthly", "Never"], 
                                                               index=["Daily", "Weekly", "Monthly", "Never"].index(st.session_state.periodicity_notifications))
         st.button("Save", on_click=save_user_config)
-
+    
     with st.container():
+        # Container de pruebas
         st.title("Interests")
         with st.container():
             st.header("Indexes")
         with st.container():
             st.header("Companies")
-            # Display selector to show markets to be displayed
-            
-            # Get the with the avalaible companies in the selected market
-            df_original = load_companies()
-            # Add the column of the mark box
-            df_original['Interested'] = False
+            # Display a selector to show markets to be displayed
+            selected_option = st.selectbox("Select a market : ", MARKETS)
+            # Get the data of the selected option
+            df_original = load_companies(selected_option)
+            # Load the selected options of the user
+            list_companies_interest = load_user_preferences(selected_option)
+            if list_companies_interest is None:
+                # In the case the user has not saved any configuration for the selected market yet
+                df_original['Interested'] = False
+            else:
+                df_original['Interested'] = df_original['name'].isin(list_companies_interest)
             # Dataframe with the data of the companies
-            st.data_editor(data=df_original,
-                        use_container_width=True,
-                        hide_index=True,
-                        )
-
-
+            df_tickers_preferences = st.data_editor(data=df_original,
+                    use_container_width=True,
+                    hide_index=True,
+                    )
+            st.button("Save", key="users_preferences_button", on_click=lambda : save_user_preferences(df_tickers_preferences, selected_option))
