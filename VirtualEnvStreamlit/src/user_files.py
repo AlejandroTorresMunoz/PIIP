@@ -78,7 +78,7 @@ def signup():
         st.error(f"Internal error : {e}")
 
 def save_user_config():
-    """Method to save th configuration of the user"""
+    """Method to save the configuration of the user"""
     try:
         db_config = st.secrets["connections"]["postgresql"]
         conn = psycopg2.connect(host=db_config['host'],
@@ -95,4 +95,23 @@ def save_user_config():
     
     except Exception as e:
         st.error(f"Internal error : {e}")
-    pass
+
+def load_user_config():
+    """Method to load the configuration of the user"""
+    try:
+        db_config = st.secrets["connections"]["postgresql"]
+        conn = psycopg2.connect(host=db_config['host'],
+                      port=db_config['port'],
+                      database=db_config['database'],
+                      user= db_config['username'],
+                      password= db_config['password'])
+        cursor = conn.cursor()
+
+        query = f"SELECT * FROM user_preferences WHERE email = '{st.session_state.email}';"
+        cursor.execute(query)
+        result = cursor.fetchone()
+        st.session_state.receive_email_notifications = result[2] # Receive email notificatios
+        st.session_state.periodicity_notifications = result[3] # Periodicity of the notifications
+        
+    except Exception as e:
+        st.error(f"Internal error : {e}")
