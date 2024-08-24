@@ -56,8 +56,10 @@ elif 'user_logged' in st.session_state and st.session_state.user_logged == True:
             st.header("Companies")
             # Display a selector to show markets to be displayed
             selected_option = st.selectbox("Select a market : ", MARKETS)
-            # Get the data of the selected option
+            # Get the companies contained in the selected option
             df_original = load_companies(selected_option)
+            # Get the data of all the companies available
+            
             # Load the selected options of the user
             list_companies_interest = load_user_preferences(selected_option)
             if list_companies_interest is None:

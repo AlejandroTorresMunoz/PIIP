@@ -1,0 +1,226 @@
+﻿id;name
+1;Nissui
+2;Denka
+3;DOWA Holdings
+4;Mitsubishi Heavy Industries
+5;Nomura
+6;Shin-Etsu Chemical
+7;Kawasaki Heavy Industries
+8;Inpex Corp.
+9;Kyowa Kirin
+10;Furukawa Electric
+11;IHI Corp.
+12;Sompo Holdings Inc
+13;Comsys Holdings Corp.
+14;Mitsui Chemicals, Inc.
+15;Sumitomo Electric Industries
+16;Nissan Motor
+17;MS&AD Insurance Group Holdings
+18;Taisei Corp.
+19;Mitsubishi Chemical Holdings Corp
+20;Fujikura
+21;Isuzu Motors
+22;Obayashi Corp.
+23;Ube Industries
+24;Dai-ichi Life
+25;Shimizu Corp.
+26;Okuma Corp.
+27;Hino Motors
+28;Tokio Marine Holdings, Inc.
+29;Kajima Corp.
+30;Dentsu Inc.
+31;Amada
+32;Mitsubishi Motors Corp.
+33;T&D Holdings, Inc.
+34;Daiwa House Industry
+35;Kao Corp.
+36;Komatsu
+37;Mazda Motor
+38;Mitsui Fudosan
+39;Sekisui House
+40;Takeda Pharmaceutical
+41;Sumitomo Heavy Industries
+42;Honda Motor
+43;Mitsubishi Estate
+44;JGC Corp.
+45;Astellas Pharma Inc.
+46;Hitachi Construction Machinery Co
+47;Suzuki Motor Corp.
+48;Nisshin Seifun Group Inc.
+49;Sumitomo Dainippon Pharma
+50;Kubota Corp.
+51;Subaru Corp
+52;Tokyo Tatemono
+53;Meiji Holdings
+54;Shionogi
+55;Ebara Corp.
+56;Nikon Corp.
+57;NH Foods
+58;Chugai Pharmaceutical
+59;Olympus Corp.
+60;Sumitomo Realty & Development Co.
+61;Sapporo Holdings
+62;Eisai
+63;Daikin Industries
+64;Dainippon Screen Mfg.
+65;Tobu Railway
+66;Asahi Group Holdings
+67;Terumo Corp.
+68;NSK
+69;Canon
+70;Tokyu Corp.
+71;Kirin Holdings
+72;Daiichi Sankyo
+73;NTN Corp.
+74;Ricoh
+75;Odakyu Electric Railway
+76;Takara Holdings Inc.
+77;LY Corp
+78;JTEKT Corp.
+79;Citizen Holdings
+80;Keio Corp.
+81;Sojitz Corp.
+82;Trend Micro Inc.
+83;Minebea Mitsumi
+84;Toppan Printing
+85;Keisei Electric Railway
+86;Kikkoman Corp.
+87;Fujifilm Holdings Corp.
+88;Hitachi
+89;Dai Nippon Printing
+90;East Japan Railway Co.
+91;Ajinomoto Co., Inc.
+92;Konica Minolta, Inc.
+93;Yamaha Corp.
+94;West Japan Railway Co.
+95;Nichirei Corp.
+96;Shiseido
+97;Mitsubishi Electric
+98;Itochu Corp.
+99;Central Japan Railway Co.
+100;Japan Tobacco
+101;Fuji Electric
+102;Marubeni Corp.
+103;Nippon Express
+104;J.Front Retailing
+105;Eneos Holdings
+106;Yaskawa Electric Corp.
+107;Toyota Tsusho Corp.
+108;Yamato Holdings
+109;Isetan Mitsukoshi Holdings
+110;Yokohama Rubber
+111;Mitsui
+112;Nippon Yusen K.K
+113;Bridgestone Corp.
+114;GS Yuasa Corp.
+115;Tokyo Electron
+116;Mitsui O.S.K. Lines
+117;AGC
+118;NEC Corp.
+119;Sumitomo Corp.
+120;Kawasaki Kisen Kaisha
+121;Fujitsu
+122;Mitsubishi Corp.
+123;ANA Holdings
+124;Nippon Electric Glass
+125;Takashimaya
+126;Mitsubishi Logistics Corp.
+127;Seven & i Holdings
+128;Sumitomo Osaka Cement
+129;Panasonic
+130;Marui Group
+131;Teijin
+132;Taiheiyo Cement Corp.
+133;Credit Saison
+134;Nippon Telegraph & Telephone Corp
+135;Toray Industries, Inc.
+136;Tokai Carbon
+137;Sony
+138;Aeon
+139;KDDI Corp.
+140;Kuraray
+141;TOTO
+142;TDK
+143;Asahi Kasei Corp.
+144;NGK Insulators
+145;Tokyo Electric Power Co., Inc.
+146;SUMCO Corp.
+147;Nippon Steel
+148;Alps Electric
+149;Aozora Bank
+150;Chubu Electric Power Co., Inc.
+151;Oji Holdings Corp.
+152;Kobe Steel
+153;Mitsubishi UFJ Financial
+154;Kansai Electric Power
+155;Nippon Paper Industries
+156;JFE Holdings, Inc.
+157;Yokogawa Electric Corp.
+158;Resona Holdings, Inc.
+159;Tokyo Gas
+160;Advantest Corp.
+161;Osaka Gas
+162;Pacific Metals
+163;Denso Corp.
+164;Sumitomo Mitsui Financial
+165;Toho
+166;Resonac Holdings
+167;Japan Steel Works
+168;Casio Computer
+169;Chiba Bank
+170;NTT Data Corp.
+171;Sumitomo Chemical
+172;Fanuc Corp.
+173;Nissan Chemical Industries
+174;Mitsui Mining and Smelting Co.
+175;Kyocera Corp.
+176;Fukuoka Financial Group, Inc.
+177;Secom
+178;Taiyo Yuden
+179;Shizuoka Financial Group
+180;Konami Corp.
+181;Tosoh Corp.
+182;Mitsubishi Materials Corp.
+183;Mizuho Financial
+184;Fast Retailing
+185;Tokuyama Corp.
+186;Sumitomo Metal Mining
+187;Hitachi Zosen Corp.
+188;Daiwa Securities Group Inc.
+189;SoftBank Group Corp.
+190;Tokyu Fudosan
+191;Nitto Denko Co
+192;Renesas Electronics Corp
+193;DeNA Co
+194;Japan Airlines Co
+195;Orix T
+196;Keyence
+197;Murata Mfg Co
+198;M3 Inc
+199;Nexon Co Ltd
+200;Otsuka Holdings Ltd
+201;DIC Corp
+202;Oriental Land Co Ltd
+203;Idemitsu Kosan Co Ltd
+204;SMC Corp
+205;Nidec Corp
+206;Omron Cor
+207;Seiko Epson Cor
+208;Yamaha Motor Co Ltd
+209;Hoya Cor
+210;Bandai Namco Holdings Inc
+211;Nintendo
+212;Nitori Holdings Co Ltd
+213;CyberAgent Inc
+214;Rakuten Inc
+215;Recruit Holdings
+216;Lasertec Corp
+217;Japan Exchange Group
+218;Japan Post Holdings
+219;Haseko
+220;Sumitomo Mitsui
+221;Sharp
+222;Concordia Financial Group
+223;Toyota Motor
+224;Mercari
+225;SoftBank Corp
