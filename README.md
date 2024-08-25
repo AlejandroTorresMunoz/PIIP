@@ -13,3 +13,7 @@ This repository has been created with the objective to create an APP for finance
 -   LangChain
 -   MongoDB
 -   PostgreSQL
+
+# Models used
+
+We are using **Llama 3.1 8B**(localmode, using **OLlama**) as initial chat model. The use of bigger model will be studied in the future once we have extracted some conclusions. 
