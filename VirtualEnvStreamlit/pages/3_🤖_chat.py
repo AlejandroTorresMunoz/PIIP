@@ -2,9 +2,12 @@ import streamlit as st
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_ollama import ChatOllama
-from langchain.agents import AgentExecutor, create_tool_calling_agent
-from langchain_core.tools import Tool
+from src.chat_files import route
 from src.chat_files import plot_ticker
+from langchain.tools.render import format_tool_to_openai_function
+from langchain_core.utils.function_calling import convert_to_openai_function
+from langchain.agents.output_parsers import OpenAIFunctionsAgentOutputParser
+
 
 # Verificación de estado del usuario
 if 'user_logged' in st.session_state and st.session_state.user_logged:
@@ -16,34 +19,22 @@ else:
 @st.cache_resource
 def load_model():
     # Cargar el modelo solo una vez al cargar la página
-    chat_model = ChatOllama(model="llama3.1:8b", temperature=0.1)
-    # tools = [plot_ticker]
-    tools = [
-        Tool(
-            name="plot_ticker",
-            func=plot_ticker,
-            description=plot_ticker.__doc__
-        )
-    ]
+    tools = [plot_ticker]
+    functions = [convert_to_openai_function(f) for f in tools]
+    chat_model = ChatOllama(model="llama3.1:8b").bind_tools(functions)    
     chat_description = """
     You are a virtual assistant in the context of a financial news and recommendations site. You can execute some tools in case the user requests it.
     If the user's question pertains to a tool function, execute the tool. Otherwise, provide a textual response.
     """
-    # Modificar el prompt template para incluir agent_scratchpad
+    # Modificar el prompt template para incluir 
     prompt_template = ChatPromptTemplate.from_messages(
         [
             ("system", chat_description),  # Descripción proporcionada al modelo
             MessagesPlaceholder(variable_name="chat_history"),  # Historial del chat
-            ("human", "{input}"),  # Entrada del usuario
-            MessagesPlaceholder(variable_name="agent_scratchpad"),  # Agent scratchpad para acciones intermedias
+            ("human", "{input}")  # Entrada del usuario
         ]
     )
-    # Crear el agente
-    agent = create_tool_calling_agent(chat_model, tools, prompt_template)
-    # Crear el agent executor
-    agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-    
-    return agent_executor
+    return prompt_template | chat_model | route # | OpenAIFunctionsAgentOutputParser() | route
 
 # Cargar el modelo LLM si no está en el session_state
 if 'chain_chat' not in st.session_state:
@@ -57,7 +48,6 @@ st.title("Chat")
 
 # Caja de entrada para el usuario
 user_input = st.text_input("Escribe tu consulta:", key="user_input")
-
 # Botón de envío
 if st.button("Enviar"):
     # Generar respuesta
@@ -68,7 +58,7 @@ if st.button("Enviar"):
     print(response)
     # Actualizar historial del chat
     st.session_state["chat_history"].append(HumanMessage(content=user_input))
-    st.session_state["chat_history"].append(AIMessage(content=response['output']))
+    st.session_state["chat_history"].append(AIMessage(content=response))
 
 # Mostrar el historial del chat
 print("Esperando a recibir mensaje")
