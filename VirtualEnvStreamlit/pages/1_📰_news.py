@@ -12,7 +12,7 @@ else:
     st.sidebar.write("Please. log in.")
 
 
-
+# Get dataframe with the active articles
 pdf_files = load_pdf_files()
 
 with st.container():
@@ -23,15 +23,15 @@ with st.container():
     with col_articles:
         st.title("Articles")
         # Read the PDF files
-        for pdf_path in pdf_files:
-            # Get the name of the file
-            pdf_name = os.path.basename(pdf_path)
-            with st.expander(f"{pdf_name}"):
-                with open(pdf_path, 'rb') as pdf_file:
-                    pdf_bytes = pdf_file.read()
-                    st.download_button(label="Download article", data=pdf_bytes, file_name=pdf_name)
-                
-                # Display PDF
-                st.write(f"Preview of {pdf_name}")
-                # st.pd
+        for i in range(len(pdf_files)):
+            article_name = pdf_files.iloc[i]['name'].split('.pdf')[0]
+            article_path = pdf_files.iloc[i]['path']
+            with st.expander(f"{article_name}"):
+                with open(article_path, 'rb') as pdf_file:
+                    # TODO : Get the first lines of the pdf as summary
 
+                    pdf_bytes = pdf_file.read()
+                    st.download_button(label="Download article", data=pdf_bytes, file_name=article_name)
+
+
+        
