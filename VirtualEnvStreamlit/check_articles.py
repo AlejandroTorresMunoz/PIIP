@@ -67,5 +67,5 @@ for pdf in pdf_files_unactive:
 conn.commit()
 cursor.close()
 conn.close()
-print("Cambios realizados en la tabla de artículos.")
+print("Changes realized on the articles database.")
 
