@@ -1,5 +1,4 @@
 import streamlit as st
-import PyPDF2
 import os
 from src.news_files import refresh_articles_container
 

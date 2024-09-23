@@ -3,7 +3,7 @@ import streamlit as st
 import psycopg2
 from psycopg2 import sql
 import pandas as pd
-import PyPDF2
+import docx
 
 def refresh_articles_container():
     """Method to create the container with the active articles"""
@@ -15,23 +15,19 @@ def refresh_articles_container():
             article_name = pdf_files.iloc[i]['name'].split('.pdf')[0] # Get the name of the article
             article_path = pdf_files.iloc[i]['path'] # Get the path where the article is stored
             with st.expander(f"{article_name}"):
-                with open(article_path, 'rb') as pdf_file:
-                    # summary = get_summary_article(pdf_file) # Ge summary of the article
-                    # st.write(summary)
-                    pdf_bytes = pdf_file.read()
-                    st.download_button(label="Download article", data=pdf_bytes, file_name=article_name)
-# TODO : To be completed
-def get_summary_article(pdf_file):
-    """Method to get the first lines of an article"""
-    pdf_reader = PyPDF2.PdfReader(pdf_file)
-    first_page = pdf_reader.pages[0].extract_text() # Get first page text
-    cleaned_text = first_page.replace('\n', ' ') # Clean multiple spaces
-    cleaned_text = ' '.join(cleaned_text.split())
-    summary_lines = cleaned_text.split('\n')[0] # Get the first 5 lines of text
-    summary = "\n".join(summary_lines)
-    print(summary)
-    return summary
+                with open(article_path, 'rb') as docx_file:
+                    summary = get_summary_article(docx_file)
+                    st.write(summary)
+                    docx_bytes = docx_file.read()
+                    st.download_button(label="Download article", data=docx_bytes, file_name=article_name)
 
+# TODO : To be completed
+def get_summary_article(docx_file):
+    """Method to get the first lines of an article"""
+    doc = docx.Document(docx_file)
+    paragraphs = [p.text for p in doc.paragraphs if p.text.strip()]
+    first_paragraph = paragraphs[1] if paragraphs else ""
+    return first_paragraph
 
 
 def load_pdf_files() -> pd.DataFrame :

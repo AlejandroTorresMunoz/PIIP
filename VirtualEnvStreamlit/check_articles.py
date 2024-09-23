@@ -41,8 +41,8 @@ conn = psycopg2.connect(host=db_config['host'],
                       password= db_config['password'])
 cursor = conn.cursor()
 
-pdf_files_active = [os.path.join(PATH_ARTICLES_ACTIVE,f) for f in os.listdir(PATH_ARTICLES_ACTIVE) if f.endswith(".pdf")]
-pdf_files_unactive= [os.path.join(PATH_ARTICLES_UNACTIVE,f) for f in os.listdir(PATH_ARTICLES_UNACTIVE) if f.endswith(".pdf")]
+pdf_files_active = [os.path.join(PATH_ARTICLES_ACTIVE,f) for f in os.listdir(PATH_ARTICLES_ACTIVE) if f.endswith(".docx")]
+pdf_files_unactive= [os.path.join(PATH_ARTICLES_UNACTIVE,f) for f in os.listdir(PATH_ARTICLES_UNACTIVE) if f.endswith(".docx")]
 
 for pdf in pdf_files_active:
     name = os.path.basename(pdf)
