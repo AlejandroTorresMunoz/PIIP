@@ -1,3 +1,6 @@
+"""
+Methods used to execute login and signup, as well as to load and store it's preferences.
+"""
 import streamlit as st
 import hashlib
 import psycopg2

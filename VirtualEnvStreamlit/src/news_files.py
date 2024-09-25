@@ -1,3 +1,6 @@
+"""
+Methods to handle the news and articles page
+"""
 import os
 import streamlit as st
 import psycopg2
