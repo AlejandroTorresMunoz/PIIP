@@ -10,6 +10,7 @@ import yfinance as yf
 import matplotlib.pyplot as plt
 import streamlit as st
 import datetime
+import dateparser
 
 class plot_ticker_input(BaseModel):
     ticker : str = Field(..., description="Name of the ticker.")
@@ -26,10 +27,17 @@ def plot_ticker(ticker : str, start_date : str = "1d", end_date : str = "1d", in
         -   period (str) : Optional input. Time horizont of the plot.
         -   start_date (str) : Optional input. Start date of the graph.
     """
-    if start_date is None:
+    
+    if start_date is None or start_date.strip()=="":
         start_date = (datetime.datetime.now() - datetime.timedelta(days=7)).strftime('%Y-%m-%d')
-    if end_date is None:
+    else:
+        start_date = dateparser.parse(start_date)
+        start_date = start_date.strftime('%Y-%m-%d')
+    if end_date is None or start_date.strip()=="":
         end_date = datetime.datetime.now().strftime('%Y-%m-%d')
+    else:
+        end_date = dateparser.parse(end_date)
+        end_date = end_date.strftime('%Y-%m-%d')
     print("Los valores que ha interpretado la función de LLM son los siguientes : ")
     print(ticker)
     print(start_date)
@@ -51,7 +59,6 @@ def plot_ticker(ticker : str, start_date : str = "1d", end_date : str = "1d", in
         axs.legend()
         # Plot the graph in Streamlit
         st.pyplot(fig)
-        print(data)
         return f"Here is the plot of the ticker : {ticker}."
 
 
