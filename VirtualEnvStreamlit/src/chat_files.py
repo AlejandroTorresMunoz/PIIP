@@ -11,46 +11,55 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import datetime
 import dateparser
+from typing import Optional
+
+ACCEPTED_INTERVALS_PLOT = {"1m" : "Each minute", 
+                           "2m" : "Each 2 minute", 
+                           "5m" : "Each 5 minute", 
+                           "15m" : "Each 15 minutes", 
+                           "30m" : "Each 30 minutes", 
+                           "60m" : "Each 60 minutes, or each hour", 
+                           "90m" : "Each 90' minutes, or each hour and a half", 
+                           "1h" : "Each hour",
+                           "1d" : "Each day", 
+                           "5d" : "Each 5 days", 
+                           "1wk" : "Each week", 
+                           "1mo" : "Each month", 
+                           "3mo": "Each 3 months"}
 
 class plot_ticker_input(BaseModel):
     ticker : str = Field(..., description="Name of the ticker.")
-    start_date : str = Field(default=None, description="Start date of the graph.")
-    end_date : str = Field(default=None, description="End date of the graph.")
-    interval : str = Field(default="1d", description="Time granularity of the graph.")
+    start_date : Optional[str] = Field(default=None, description="Start date of the graph in format YYYY-MM-DD.")
+    end_date : Optional[str] = Field(default=None, description="End date of the graph in format YYYY-MM-DD.")
+    interval : str = Field(default="1d", description=f"Time granularity/intercals of the graph. The accepted values are the keys of this dictionary : {ACCEPTED_INTERVALS_PLOT}")
 
 @tool(args_schema=plot_ticker_input)
-def plot_ticker(ticker : str, start_date : str = "1d", end_date : str = "1d", interval : str = "1d"):
+def plot_ticker(ticker : str, 
+                start_date : str = (datetime.datetime.now() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'), 
+                end_date : str = datetime.datetime.now().strftime('%Y-%m-%d'), 
+                interval : str = "1d"):
     """
     Plot the data of a specified ticker/stock.
     Args : 
         -   ticker (str) : Ticker to get the financial data from
         -   period (str) : Optional input. Time horizont of the plot.
         -   start_date (str) : Optional input. Start date of the graph.
-    """
-    
-    if start_date is None or start_date.strip()=="":
-        start_date = (datetime.datetime.now() - datetime.timedelta(days=7)).strftime('%Y-%m-%d')
-    else:
-        start_date = dateparser.parse(start_date)
-        start_date = start_date.strftime('%Y-%m-%d')
-    if end_date is None or start_date.strip()=="":
-        end_date = datetime.datetime.now().strftime('%Y-%m-%d')
-    else:
-        end_date = dateparser.parse(end_date)
-        end_date = end_date.strftime('%Y-%m-%d')
-    print("Los valores que ha interpretado la función de LLM son los siguientes : ")
-    print(ticker)
-    print(start_date)
-    print(end_date)
+    """    
+
+    print(f"El start_date introducido es el siguiente : {start_date}")
+    print(f"El end_date introducido es el siguiente : {end_date}")
+    print(f"El interval introducido es el siguiente : {interval}")
+
+
     stock = yf.Ticker(ticker)
     data = stock.history(start=start_date, end=end_date, interval=interval)
     
+    
     if data.empty:
         # Ticker doesn't exist
-        return f"The ticker {ticker} doesn't exist."
+        return f"There's been an error getting the values of the ticker : {ticker}"
     else:
         #TODO : Plot a graph in the streamlit page    
-        print("Mostrando gráfica")
         fig, axs = plt.subplots()
         axs.plot(data.index, data['Close'], label="Close Price")
         axs.set_label("Date")

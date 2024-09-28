@@ -7,7 +7,7 @@ from src.chat_files import plot_ticker
 from langchain.tools.render import format_tool_to_openai_function
 from langchain_core.utils.function_calling import convert_to_openai_function
 from langchain.agents.output_parsers import OpenAIFunctionsAgentOutputParser
-
+import datetime
 
 # Verificación de estado del usuario
 if 'user_logged' in st.session_state and st.session_state.user_logged:
@@ -21,10 +21,14 @@ def load_model():
     # Cargar el modelo solo una vez al cargar la página
     tools = [plot_ticker]
     functions = [convert_to_openai_function(f) for f in tools]
-    chat_model = ChatOllama(model="llama3.1:8b").bind_tools(functions)    
-    chat_description = """
+    chat_model_without_tools = ChatOllama(model="llama3.1:8b")
+    chat_model = chat_model_without_tools.bind_tools(functions)    
+    
+    chat_description = f"""
     You are a virtual assistant in the context of a financial news and recommendations site. You can execute some tools in case the user requests it.
     If the user's question pertains to a tool function, execute the tool. Otherwise, provide a textual response.
+
+    You must know that we are in year {datetime.datetime.now().year}
     """
     # Modificar el prompt template para incluir 
     prompt_template = ChatPromptTemplate.from_messages(
@@ -34,11 +38,11 @@ def load_model():
             ("human", "{input}")  # Entrada del usuario
         ]
     )
-    return prompt_template | chat_model | route # | OpenAIFunctionsAgentOutputParser() | route
+    return prompt_template | chat_model | route, chat_model_without_tools # | OpenAIFunctionsAgentOutputParser() | route
 
 # Cargar el modelo LLM si no está en el session_state
 if 'chain_chat' not in st.session_state:
-    st.session_state.chain_chat = load_model()
+    st.session_state.chain_chat, st.session_state.chat_model = load_model()
 
 # Crear historial del chat
 if "chat_history" not in st.session_state:
